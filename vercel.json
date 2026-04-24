@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "index.js",
+      "use": "@vercel/node",
+      "config": {
+        "maxDuration": 10,
+        "includeFiles": [
+          "public/**",
+          "media/**",
+          "routes/**",
+          "lib/**",
+          "utils/**",
+          "config/**",
+          "config.js",
+          "manifest.json",
+          "package.json",
+          "package-lock.json"
+        ]
+      }
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/index.js" }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
